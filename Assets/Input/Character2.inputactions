@@ -1,0 +1,33 @@
+{
+    "name": "Character2",
+    "maps": [
+        {
+            "name": "Character",
+            "id": "20add3e8-e83e-4708-a392-e1c69365fadb",
+            "actions": [
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "c69421b1-07d4-4676-ba12-358b32f8de94",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f6560658-ebe2-4bc6-908b-3e04edea9cf1",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

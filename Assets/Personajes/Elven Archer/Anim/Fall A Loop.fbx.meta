@@ -1,0 +1,349 @@
+fileFormatVersion: 2
+guid: 82396cfb4f96cb949b070a3d8ed31479
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: -203655887218126122
+    second: caida eterna
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: caida eterna
+      takeName: mixamo.com
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 32
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: Fall A Loop(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigPelvis
+      parentName: Fall A Loop(Clone)
+      position: {x: 0.0001332201, y: 0.9195804, z: -0.00468584}
+      rotation: {x: 0.41179183, y: -0.5065945, z: -0.4835297, w: 0.58308536}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigLThigh
+      parentName: RigPelvis
+      position: {x: 0.038182, y: -0.005585, z: 0.077192}
+      rotation: {x: -0.011476278, y: 0.9717129, z: 0.22985508, w: 0.05300136}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigLCalf
+      parentName: RigLThigh
+      position: {x: -0.358234, y: 0.0000069999996, z: 0}
+      rotation: {x: 0.06674241, y: -0.022297632, z: 0.3180683, w: 0.94545275}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigLFoot
+      parentName: RigLCalf
+      position: {x: -0.40091202, y: 0, z: 0}
+      rotation: {x: -0.7181729, y: 0.28566432, z: -0.15109056, w: 0.6162753}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigLToe11
+      parentName: RigLFoot
+      position: {x: -0.141241, y: 0.000046999998, z: 0.000010000001}
+      rotation: {x: 0.0038457545, y: 0.0010928061, z: -0.32378802, w: 0.9461212}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigLToe12
+      parentName: RigLToe11
+      position: {x: -0.044820998, y: 0, z: 0}
+      rotation: {x: 0.000033263877, y: 0.0021083094, z: 0.9980953, w: -0.061654974}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigRThigh
+      parentName: RigPelvis
+      position: {x: 0.038184, y: -0.006189, z: -0.077192}
+      rotation: {x: -0.0021089467, y: 0.98927486, z: -0.14128318, w: -0.037012342}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigRCalf
+      parentName: RigRThigh
+      position: {x: -0.358244, y: 0.000006, z: 0}
+      rotation: {x: -0.15614398, y: 0.02656476, z: 0.28727174, w: 0.9446631}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigRFoot
+      parentName: RigRCalf
+      position: {x: -0.400908, y: 0, z: 0}
+      rotation: {x: 0.72170335, y: -0.24705897, z: -0.15164472, w: 0.62857777}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigRToe11
+      parentName: RigRFoot
+      position: {x: -0.141919, y: 0.000048, z: 0.000008}
+      rotation: {x: -0.0031452407, y: -0.0010320389, z: -0.3114515, w: 0.9502563}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigRToe12
+      parentName: RigRToe11
+      position: {x: -0.046093002, y: 0, z: 0}
+      rotation: {x: -0.000039016657, y: 0.0022816318, z: 0.9979157, w: -0.064491466}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigSpine1
+      parentName: RigPelvis
+      position: {x: -0.068685, y: -0.0029069998, z: 0}
+      rotation: {x: 0.016735742, y: 0.0034668157, z: -0.04144549, w: 0.9989946}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigSpine2
+      parentName: RigSpine1
+      position: {x: -0.080203995, y: 0, z: 0}
+      rotation: {x: 0.031753544, y: 0.009354823, z: -0.12267185, w: 0.9918951}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigSpine3
+      parentName: RigSpine2
+      position: {x: -0.091662, y: 0, z: 0}
+      rotation: {x: 0.03075069, y: 0.012255587, z: -0.21328019, w: 0.9764301}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigRibcage
+      parentName: RigSpine3
+      position: {x: -0.108219996, y: 0, z: 0}
+      rotation: {x: 0.03050662, y: 0.012851191, z: -0.049696077, w: 0.9982157}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigLCollarbone
+      parentName: RigRibcage
+      position: {x: 0.012587, y: -0.020077, z: 0.042564}
+      rotation: {x: -0.018607864, y: 0.7914615, z: 0.029431911, w: 0.61022633}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigLUpperarm
+      parentName: RigLCollarbone
+      position: {x: -0.077603996, y: 0, z: 0}
+      rotation: {x: -0.27270702, y: -0.120856285, z: -0.05302995, w: 0.9530018}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigLForearm
+      parentName: RigLUpperarm
+      position: {x: -0.182099, y: 0, z: 0}
+      rotation: {x: -0.04458445, y: -0.006405576, z: -0.051963832, w: 0.9976327}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigLPalm
+      parentName: RigLForearm
+      position: {x: -0.199565, y: 0, z: 0}
+      rotation: {x: 0.9409505, y: 0.010381602, z: 0.042290516, w: -0.33573183}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigLThumb1
+      parentName: RigLPalm
+      position: {x: -0.013726, y: 0.001222, z: 0.029656999}
+      rotation: {x: 0.04985496, y: 0.17078274, z: 0.3694055, w: 0.91207856}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigLThumb2
+      parentName: RigLThumb1
+      position: {x: -0.030032, y: 0, z: 0}
+      rotation: {x: 0.039947607, y: -0.027921276, z: -0.014616496, w: 0.9987047}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigLThumb3
+      parentName: RigLThumb2
+      position: {x: -0.017353998, y: 0, z: 0}
+      rotation: {x: -0.024948528, y: -0.02373725, z: -0.005085474, w: 0.99939394}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigLThumb4
+      parentName: RigLThumb3
+      position: {x: -0.015416999, y: 0, z: 0}
+      rotation: {x: 0.025125744, y: -0.022068262, z: 0.026383352, w: 0.9990924}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigLFinger1
+      parentName: RigLPalm
+      position: {x: -0.086225994, y: -0.000463, z: 0.001679}
+      rotation: {x: 0.06377065, y: -0.051341824, z: 0.071761996, w: 0.99405617}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigLFinger2
+      parentName: RigLFinger1
+      position: {x: -0.026982, y: 0, z: 0}
+      rotation: {x: 0.00029607856, y: -0.001155365, z: 0.009692602, w: 0.9999523}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigLFinger3
+      parentName: RigLFinger2
+      position: {x: -0.029923998, y: 0, z: 0}
+      rotation: {x: -0.0253651, y: -0.0028830515, z: 0.01577197, w: 0.9995497}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigLFinger4
+      parentName: RigLFinger3
+      position: {x: -0.029712997, y: 0, z: 0}
+      rotation: {x: 0.04534539, y: 0.9989227, z: 0.0098009175, w: -0.0011101103}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigRCollarbone
+      parentName: RigRibcage
+      position: {x: 0.012587, y: -0.020077, z: -0.042564}
+      rotation: {x: 0.030892668, y: -0.82236373, z: -0.018906517, w: 0.5678083}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigRUpperarm
+      parentName: RigRCollarbone
+      position: {x: -0.077603996, y: 0, z: 0}
+      rotation: {x: 0.22618814, y: 0.198619, z: 0.04347397, w: 0.95262766}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigRForearm
+      parentName: RigRUpperarm
+      position: {x: -0.182099, y: 0, z: 0}
+      rotation: {x: -0.01674218, y: -0.033218224, z: -0.043079413, w: 0.9983789}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigRPalm
+      parentName: RigRForearm
+      position: {x: -0.199565, y: 0, z: 0}
+      rotation: {x: 0.70624316, y: -0.06168618, z: 0.08255269, w: 0.7004288}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigRThumb1
+      parentName: RigRPalm
+      position: {x: -0.013726, y: 0.001222, z: -0.029656999}
+      rotation: {x: 0.010070321, y: -0.36143604, z: -0.088179566, w: 0.92816323}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigRThumb2
+      parentName: RigRThumb1
+      position: {x: -0.030032, y: 0, z: 0}
+      rotation: {x: 0.0024765718, y: 0.03027542, z: -0.0027915488, w: 0.9995346}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigRThumb3
+      parentName: RigRThumb2
+      position: {x: -0.017353998, y: 0, z: 0}
+      rotation: {x: 0.01890732, y: 0.035604358, z: -0.02086907, w: 0.99896914}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigRThumb4
+      parentName: RigRThumb3
+      position: {x: -0.015416999, y: 0, z: 0}
+      rotation: {x: -0.02512751, y: 0.022069087, z: 0.026383411, w: 0.99909234}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigRFinger1
+      parentName: RigRPalm
+      position: {x: -0.086225994, y: -0.000463, z: -0.001679}
+      rotation: {x: 0.00031477748, y: -0.047914635, z: -0.14256053, w: 0.9886256}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigRFinger2
+      parentName: RigRFinger1
+      position: {x: -0.026982, y: 0, z: 0}
+      rotation: {x: 0.00336967, y: 0.0032297405, z: 0.03499954, w: 0.9993765}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigRFinger3
+      parentName: RigRFinger2
+      position: {x: -0.029923998, y: 0, z: 0}
+      rotation: {x: -0.030479087, y: 0.01625647, z: 0.028841713, w: 0.99898696}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigRFinger4
+      parentName: RigRFinger3
+      position: {x: -0.029712997, y: 0, z: 0}
+      rotation: {x: 0.045341037, y: 0.9989229, z: -0.009800951, w: 0.0011110246}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigNeck
+      parentName: RigRibcage
+      position: {x: 0.004065, y: -0.020611998, z: 0}
+      rotation: {x: -0.049199138, y: -0.011012652, z: 0.09353908, w: 0.9943383}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigHead
+      parentName: RigNeck
+      position: {x: -0.052665, y: 0, z: 0}
+      rotation: {x: -0.04766061, y: -0.0019257287, z: 0.15236703, w: 0.98717225}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RigHeadBone001
+      parentName: RigHead
+      position: {x: -0.330716, y: 0.022227999, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
