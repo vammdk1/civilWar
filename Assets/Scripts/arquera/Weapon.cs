@@ -12,32 +12,21 @@ namespace Archer
         // Obtener una referencia a la acción "Fire"
         [SerializeField]
         private InputActionReference inputActionReference;
-        private Animator shooter;
+        
 
         private void Awake()
         {
             // Subscribir el comienzo de la acción disparo
             inputActionReference.action.performed += Action_performed;
-            shooter = GetComponent<Animator>();
+
 
         }
 
-        IEnumerator espetaDisparo()
-        {
-
-            //yield return new WaitForSeconds(shooter.GetCurrentAnimatorClipInfo(0).Length+shooter.GetCurrentAnimatorStateInfo(0).normalizedTime);
-            yield return new WaitForSeconds(10);
-        }
+       
         private void Action_performed(InputAction.CallbackContext obj)
        
         {
-            shooter.SetTrigger("disp");
-            if (shooter.GetCurrentAnimatorStateInfo(0).IsName("disparar"))
-            {
-                //TODO
-                espetaDisparo();
-               new WaitForSeconds(shooter.GetCurrentAnimatorClipInfo(0).Length + shooter.GetCurrentAnimatorStateInfo(0).normalizedTime);
-            }
+           
             // Dibujar un rayo de referencia para saber por dónde se dispara el rayo
             Debug.DrawRay(transform.position + Vector3.up, transform.forward * 1000, Color.red, 1);
 

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -21,6 +22,18 @@ namespace Archer
         private InputAction moveAction;
 
         private Animator control;
+        private bool freno= false;
+
+        public void setfreno(bool estado)
+        {
+            this.freno = estado;
+        }
+
+        public bool getfreno()
+        {
+            Debug.Log("getter:"+freno);
+            return freno;
+        }
 
         private void Awake()
         {
@@ -30,7 +43,7 @@ namespace Archer
             control = GetComponent<Animator>();
         }
 
-       
+
         private void FixedUpdate()
         {
             var movement = moveAction.ReadValue<Vector2>();
@@ -53,12 +66,20 @@ namespace Archer
        
         private void Walk(float amount)
         {
-            playerRigidbody.MovePosition(transform.position + transform.forward * Time.deltaTime * walkSpeed * amount);
+            if (!getfreno())
+            {
+                playerRigidbody.MovePosition(transform.position + transform.forward * Time.deltaTime * walkSpeed * amount);
+
+            }
         }
 
         private void Rotate(float amount)
         {
-            playerRigidbody.MoveRotation(Quaternion.Euler(transform.eulerAngles + Vector3.up * amount * Time.deltaTime * rotateSpeed));
+            if (!getfreno())
+            {
+                playerRigidbody.MoveRotation(Quaternion.Euler(transform.eulerAngles + Vector3.up * amount * Time.deltaTime * rotateSpeed));
+
+            }
         }
 
     }

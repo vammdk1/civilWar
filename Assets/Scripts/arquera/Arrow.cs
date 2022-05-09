@@ -28,9 +28,11 @@ namespace Archer
             // Si impacta con el jugador, lo ignoramos
             if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
+                Debug.Log("prueba");
+
                 return;
             }
-
+            
             hit = true;
 
             // Reproducir el impacto de la flecha
