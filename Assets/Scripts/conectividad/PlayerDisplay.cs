@@ -26,6 +26,8 @@ namespace Netcode
 
         private void Awake()
         {
+
+            Debug.Log("nombre");
             // Nos suscribimos al evento que nos notificará que el valor del NetworkVariable ha cambiado
             networkPlayerName.OnValueChanged = OnPlayerNameUpdated;
             // Establecemos el valor del nombre en el texto
@@ -37,7 +39,6 @@ namespace Netcode
             base.OnNetworkSpawn();
 
             // OnNetworkSpawn se llama cuando prefab (en este caso, el prefab de cada jugador) se ha instanciado
-
             // Si no es el prefab del jugador local, ponemos el valor que ya tenemos almacenado en la variable
             if (!IsLocalPlayer)
             {

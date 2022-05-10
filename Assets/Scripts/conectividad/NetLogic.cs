@@ -19,25 +19,44 @@ namespace Netcode
         {
             // Nos subscribimos al evento OnClientConnection, el cual nos notificará que un jugador se ha conectado
             // Se nos llamará por cada jugador que se conecte en todos los jugadores que estén conectados
-            NetworkManager.Singleton.OnClientConnectedCallback += Singleton_OnClientConnectedCallback;
+            
+            NetworkManager.Singleton.OnClientConnectedCallback += Singleton_OnClientConnectedCallback1;
 
             // Más tarde CarSpawner nos servirá para instanciar coches de los jugadores
             carSpawner = GetComponent<CarSpawner>();        
         }
 
-        private void Singleton_OnClientConnectedCallback(ulong clientId)
+        private void Singleton_OnClientConnectedCallback1(ulong clientId)
         {
             // Nos hemos subscrito a este evento en Start, se llama en todas las instancias del juego cuando un jugador se conecta
             if (clientId == NetworkManager.Singleton.LocalClientId)
             {
                 // Si el jugador que se acaba de conectar es la instancia local del juego, 
                 // mediante carSpawner pedimos que el servidor nos instancie nuestro coche
-                carSpawner.SpawnPlayer(clientId, playerName);
+                carSpawner.spanwplayer(clientId, playerName);
             }
 
-            //var localPlayer = NetworkManager.Singleton.SpawnManager.GetLocalPlayerObject();
-            //var playerDisplay = localPlayer.GetComponent<PlayerDisplay>();
-            //playerDisplay.SetPlayerName(playerName);
+            var localPlayer = NetworkManager.Singleton.SpawnManager.GetLocalPlayerObject();
+            var playerDisplay = localPlayer.GetComponent<PlayerDisplay>();
+            Debug.Log("spawn");
+            playerDisplay.SetPlayerName(playerName);
+        }
+
+        private void Singleton_OnClientConnectedCallback(ulong clientId)
+        {
+            Debug.Log("prueba1");
+            // Nos hemos subscrito a este evento en Start, se llama en todas las instancias del juego cuando un jugador se conecta
+            if (clientId == NetworkManager.Singleton.LocalClientId)
+            {
+                Debug.Log("prueba2");
+                // Si el jugador que se acaba de conectar es la instancia local del juego, 
+                // mediante carSpawner pedimos que el servidor nos instancie nuestro coche
+                carSpawner.spanwplayer(clientId, playerName);
+            }
+
+            var localPlayer = NetworkManager.Singleton.SpawnManager.GetLocalPlayerObject();
+            var playerDisplay = localPlayer.GetComponent<PlayerDisplay>();
+            playerDisplay.SetPlayerName(playerName);
         }
 
         private void OnGUI()
