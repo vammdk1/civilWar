@@ -4,8 +4,6 @@ using UnityEngine;
 public class MoveBehaviour : MonoBehaviour
 {
 
-    // Este Script permite el jugador se mueva, ya lo hemos visto en el proyecto Archer
-
     [SerializeField]
     private float moveSpeed = 4;
 

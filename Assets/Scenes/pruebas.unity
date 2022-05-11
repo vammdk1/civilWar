@@ -132,9 +132,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 162822518}
-  - component: {fileID: 162822517}
   - component: {fileID: 162822516}
   - component: {fileID: 162822519}
+  - component: {fileID: 162822517}
   m_Layer: 0
   m_Name: NetLogic
   m_TagString: Untagged
@@ -196,9 +196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f430343e896190941b7816051ea4cf11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carPrefab: {fileID: 1798490320975608, guid: 392d9512b2513d642804ffd2cd79c275, type: 3}
-  player1Car: {fileID: 4852382801097842341, guid: f5bce27176727da4ba749efabba8b7c5, type: 3}
-  Player2Car: {fileID: 3039369181404240099, guid: 4429655080285314398d77c064c471fb, type: 3}
+  Caballero: {fileID: 0}
+  Arquera: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,12 +472,12 @@ MonoBehaviour:
       SourceHashToOverride: 0
       OverridingTargetPrefab: {fileID: 0}
     - Override: 0
-      Prefab: {fileID: 3039369181404240099, guid: 4429655080285314398d77c064c471fb, type: 3}
+      Prefab: {fileID: 1798490320975608, guid: 392d9512b2513d642804ffd2cd79c275, type: 3}
       SourcePrefabToOverride: {fileID: 0}
       SourceHashToOverride: 0
       OverridingTargetPrefab: {fileID: 0}
     - Override: 0
-      Prefab: {fileID: 1798490320975608, guid: 392d9512b2513d642804ffd2cd79c275, type: 3}
+      Prefab: {fileID: 100064, guid: e49337761d3915044979621bd32ebf79, type: 3}
       SourcePrefabToOverride: {fileID: 0}
       SourceHashToOverride: 0
       OverridingTargetPrefab: {fileID: 0}

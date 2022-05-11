@@ -8,26 +8,12 @@ namespace Netcode
 {    public class CarSpawner : NetworkBehaviour
     {
         [SerializeField]
-        private GameObject carPrefab;
+        private GameObject Caballero;
         [SerializeField]
-        private GameObject player1Car;
-        [SerializeField]
-        private GameObject Player2Car;
+        private GameObject Arquera;
 
 
-        private void Start()
-        {
-            NetworkManager.Singleton.OnServerStarted += Singleton_OnServerStarted;
-        }
-
-        private void Singleton_OnServerStarted()
-        {
-            if (IsServer)
-            {
-                var gameObject = Instantiate(carPrefab);
-                gameObject.GetComponent<NetworkObject>().Spawn();
-            }
-        }
+       
 
         internal void spanwplayer(ulong clientId, string playerName)
         {
@@ -48,11 +34,11 @@ namespace Netcode
             Debug.Log("SpawnPlayerServerRpc");
             GameObject carGameObject;
             if (clientId == 0){
-                carGameObject = Instantiate(player1Car);
+                carGameObject = Instantiate(Caballero);
             }
             else
             {
-                carGameObject = Instantiate(Player2Car);
+                carGameObject = Instantiate(Arquera);
             }
 
             var networObject = carGameObject.GetComponent<NetworkObject>();

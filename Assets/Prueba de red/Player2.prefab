@@ -464,7 +464,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3039369181404240099}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d75cd6a088904e42aa3d2d6c3df1986, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ee998059e137394ca24aeaf501a266f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1808781809122653183
@@ -476,7 +476,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3039369181404240099}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b1ee1ac368d45a4a846a45ce64e7b7f, type: 3}
+  m_Script: {fileID: 11500000, guid: 262775cdfecc6054782c28b59f2627a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerNameLabel: {fileID: 4416382873578009403}
@@ -816,12 +816,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6688035231224618606}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b1e41351e3af9640ac13517cd2c636e, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a412439f49d52741a0d7016b1140786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 3043250764095456855}
-  angle: 20
-  distance: 8
+  angle: 10
+  distance: 10
 --- !u!1 &7057164414150354942
 GameObject:
   m_ObjectHideFlags: 0
@@ -932,7 +932,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7057164414150354942}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea12fef096ada1f4694e2a19d0fc2172, type: 3}
+  m_Script: {fileID: 11500000, guid: 173e79083506af14d88d35d045e7e694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8359239722981347537

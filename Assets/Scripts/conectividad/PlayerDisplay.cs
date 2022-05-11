@@ -27,7 +27,6 @@ namespace Netcode
         private void Awake()
         {
 
-            Debug.Log("nombre");
             // Nos suscribimos al evento que nos notificará que el valor del NetworkVariable ha cambiado
             networkPlayerName.OnValueChanged = OnPlayerNameUpdated;
             // Establecemos el valor del nombre en el texto
