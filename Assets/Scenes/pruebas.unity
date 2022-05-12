@@ -196,8 +196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f430343e896190941b7816051ea4cf11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Caballero: {fileID: 0}
-  Arquera: {fileID: 0}
+  Caballero: {fileID: 1798490320975608, guid: 392d9512b2513d642804ffd2cd79c275, type: 3}
+  Arquera: {fileID: 1798490320975608, guid: 392d9512b2513d642804ffd2cd79c275, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

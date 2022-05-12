@@ -27,6 +27,7 @@ namespace Archer
         private Transform handPosition;
         private Animator shooter;
         private AudioSource audioSource;
+        private bool isCooldown;
 
         private void Awake()
         {
@@ -39,20 +40,30 @@ namespace Archer
 
         private void Action_performed(InputAction.CallbackContext obj)
         {
+            if (isCooldown)
+            {
+                return;
+            }
+
             // Cuando se pulsa espacio, producimos un disparo
-            Shoot();
+            StartCoroutine(espetaDisparo());
         }
         IEnumerator espetaDisparo()
         {
+            isCooldown = true;
+            shooter.SetTrigger("disp");
 
-            //yield return new WaitForSeconds(shooter.GetCurrentAnimatorClipInfo(0).Length+shooter.GetCurrentAnimatorStateInfo(0).normalizedTime);
-            yield return new WaitForSeconds(10);
+            float shootDelay = .2f;
+
+            yield return new WaitForSeconds(shootDelay);
+            //yield return new WaitForSeconds(.3f);
+            Shoot();
+            yield return new WaitForSeconds(shooter.GetCurrentAnimatorClipInfo(0).Length - shootDelay);
+            isCooldown = false;
         }
 
         private void Shoot()
         {
-            shooter.SetTrigger("disp");
-            
             // Reproducir sonido de disparo de flecha
             audioSource.Play();
 
@@ -68,12 +79,11 @@ namespace Archer
             // Aplicar una fuerza a la flecha para que salga disparada
             var arrowRigidbody = newArrow.GetComponent<Rigidbody>();
             arrowRigidbody.AddForce(transform.forward * force);
-            if (shooter.GetCurrentAnimatorStateInfo(0).IsName("disparar"))
-            {
-                //TODO
-                espetaDisparo();
-                new WaitForSeconds(shooter.GetCurrentAnimatorClipInfo(0).Length + shooter.GetCurrentAnimatorStateInfo(0).normalizedTime);
-            }
+            //if (shooter.GetCurrentAnimatorStateInfo(0).IsName("disparar"))
+            //{
+            //    //TODO
+            //    espetaDisparo();
+            //}
         }
     }
 
