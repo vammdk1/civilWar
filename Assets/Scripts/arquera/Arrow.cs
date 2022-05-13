@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Archer
+namespace personaje
 {
 
     public class Arrow : MonoBehaviour
@@ -46,9 +46,10 @@ namespace Archer
 
             // Miramos a ver si el objeto contra el que ha impacto la flecha tiene un componente Enemy...
             var enemy = other.gameObject.GetComponentInParent<Enemy>();
-
             // ... Y si lo tiene, le hacemos daño (la siguiente comprohación es equivalente a hacer if (enemy != null) { enemy.Hit(); }
             enemy?.Hit();
+            
+
         }
 
     }

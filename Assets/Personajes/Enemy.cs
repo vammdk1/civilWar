@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Swordsman
+namespace personaje
 {
 
     public class Enemy : MonoBehaviour
@@ -15,8 +15,8 @@ namespace Swordsman
 
         private EnemyStates currentState;
 
-        [SerializeField]
-        private Transform objectToChase;
+        private GameObject[] listaJugadores;
+        public Transform[] objectToChase;
 
         [SerializeField]
         private float chaseRadius = 5;
@@ -33,20 +33,31 @@ namespace Swordsman
 
         private NavMeshAgent navMeshAgent;
 
+        [SerializeField]
+        private int hitPoints;
+        private AudioSource audioSource;
+        //Buscar como agregar jugadores a la lista automáticamente
         private void Awake()
         {
+            int i = 0;
             navMeshAgent = GetComponent<NavMeshAgent>();
             defaultSpeed = navMeshAgent.speed;
+            listaJugadores = GameObject.FindGameObjectsWithTag("Player");
+            foreach(GameObject jugador in listaJugadores){
+                objectToChase[i] = jugador.transform;
+                i++;
+            }
 
             transform.position = waypoints[currentWaypoint].position;
             transform.rotation = waypoints[currentWaypoint].rotation;
+            audioSource = GetComponent<AudioSource>();
 
             navMeshAgent.SetDestination(waypoints[currentWaypoint].position);
         }
 
         private void Update()
         {
-            if (Vector3.Distance(transform.position, objectToChase.position) < chaseRadius)
+            if (Vector3.Distance(transform.position, objectToChase[0].position) < chaseRadius)
             {
                 currentState = EnemyStates.Chasing;
                 navMeshAgent.speed = defaultSpeed * chasingSpeedFactor;
@@ -73,10 +84,45 @@ namespace Swordsman
             }
             else
             {
-                navMeshAgent.SetDestination(objectToChase.position);
+                if (objectToChase.Length <2 )
+                {
+                    navMeshAgent.SetDestination(objectToChase[0].position);
+                }
+                else
+                {
+                    if (Vector3.Distance(transform.position, objectToChase[0].position) < Vector3.Distance(transform.position, objectToChase[1].position))
+                    {
+                        navMeshAgent.SetDestination(objectToChase[0].position);
+                    }
+                    else
+                    {
+                        navMeshAgent.SetDestination(objectToChase[1].position);
+                    }
+                }
             }
         }
 
+
+        // Método que se llamará cuando el enemigo reciba un impacto
+        public void Hit()
+        {
+            // Bajar la vida
+            hitPoints--;
+            audioSource.Play();
+           
+
+            // ... y si baja a 0, el enemigo muere
+            if (hitPoints <= 0)
+            {
+                Die();
+            }
+        }
+
+        private void Die()
+        {
+            // Cuándo el enemigo muere
+            Destroy(gameObject);
+        }
     }
 
 }

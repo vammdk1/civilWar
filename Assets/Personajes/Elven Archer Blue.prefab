@@ -1426,7 +1426,7 @@ GameObject:
   - component: {fileID: 5936236857275590404}
   m_Layer: 3
   m_Name: Elven Archer Blue
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1484,10 +1484,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a19fdaa5ed83464180b2f2457731733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 100
+  jumpForce: 300
   layerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   jumpActionReference: {fileID: -7691203855604214832, guid: fd9d5ebb29d8f644abc8a12d57b17173, type: 3}
 --- !u!114 &2242763153211561080
 MonoBehaviour:
