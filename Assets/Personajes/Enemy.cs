@@ -26,8 +26,8 @@ namespace personaje
         [SerializeField]
         private float chasingSpeedFactor = 1.5f;
 
-        [SerializeField]
-        private Transform[] waypoints;
+        //[SerializeField]
+        public Transform[] waypoints;
 
         private int currentWaypoint;
 
@@ -40,18 +40,25 @@ namespace personaje
         private void Awake()
         {
             int i = 0;
-            navMeshAgent = GetComponent<NavMeshAgent>();
-            defaultSpeed = navMeshAgent.speed;
+           
             listaJugadores = GameObject.FindGameObjectsWithTag("Player");
             foreach(GameObject jugador in listaJugadores){
                 objectToChase[i] = jugador.transform;
                 i++;
             }
 
-            transform.position = waypoints[currentWaypoint].position;
-            transform.rotation = waypoints[currentWaypoint].rotation;
+            
             audioSource = GetComponent<AudioSource>();
 
+            
+        }
+
+        public void Asignador()
+        {
+            navMeshAgent = GetComponent<NavMeshAgent>();
+            defaultSpeed = navMeshAgent.speed;
+            transform.position = waypoints[currentWaypoint].position;
+            transform.rotation = waypoints[currentWaypoint].rotation;
             navMeshAgent.SetDestination(waypoints[currentWaypoint].position);
         }
 
@@ -70,16 +77,17 @@ namespace personaje
 
             if (currentState == EnemyStates.Patrolling)
             {
+                
                 if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
                 {
-                    currentWaypoint++;
+                  /**  currentWaypoint++;
 
                     if (currentWaypoint >= waypoints.Length)
                     {
                         currentWaypoint = 0;
-                    }
-
-                    navMeshAgent.SetDestination(waypoints[currentWaypoint].position);
+                    }**/
+                    
+                    navMeshAgent.SetDestination(waypoints[Random.Range(0, waypoints.Length)].position);
                 }
             }
             else
@@ -112,7 +120,7 @@ namespace personaje
            
 
             // ... y si baja a 0, el enemigo muere
-            if (hitPoints <= 0)
+            if (hitPoints <= 0)z
             {
                 Die();
             }

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1125295454710520659}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RigTail2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 700273628646255591}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RigTail3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9090501260916041085}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RigRArm1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4535883847987596810}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RigTail5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8727910065802031021}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RigRArm3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7996179871855150796}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RigHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2389425016256759562}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RigTail4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +224,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1278596654258113286}
   - component: {fileID: 5922323966910123746}
-  - component: {fileID: 2179527336889163126}
   m_Layer: 9
   m_Name: Ghost
   m_TagString: Untagged
@@ -312,19 +311,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.24170738, y: -0.033387408, z: 0}
     m_Extent: {x: 0.6063363, y: 0.5296476, z: 0.33795553}
   m_DirtyAABB: 0
---- !u!135 &2179527336889163126
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4887026773415739767}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.57
-  m_Center: {x: 0.0000000050444755, y: -0.030117724, z: 0.8265502}
 --- !u!1 &4907909198435959208
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,7 +320,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3275152435497135882}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RigSpine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,7 +351,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7130151947790417993}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RigNeck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -396,7 +382,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5887484502330675360}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RigRArm2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,7 +416,9 @@ GameObject:
   - component: {fileID: 322292135809691243}
   - component: {fileID: 8861871908014879787}
   - component: {fileID: -2241368493116581141}
-  m_Layer: 0
+  - component: {fileID: 8903147702909456672}
+  - component: {fileID: -5114974342477737783}
+  m_Layer: 9
   m_Name: Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -587,6 +575,35 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!135 &8903147702909456672
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6472515463600090795}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0.85, z: 0}
+--- !u!54 &-5114974342477737783
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6472515463600090795}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6628653628371344083
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,7 +613,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8936437727885417657}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RigRibcage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -629,7 +646,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8927842791659925618}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RigLArm2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -660,7 +677,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4019671354996214573}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RigLArm3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -690,7 +707,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4461336092697185918}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RigTail1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -721,7 +738,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 430923408005937291}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RigLArm1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -752,7 +769,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7856810759188658746}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -782,7 +799,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5607012145482738034}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RigPelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
