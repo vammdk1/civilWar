@@ -1,3 +1,4 @@
+using personaje;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace Netcode
 
         // Variable donde almacenaremos el nombre que el jugador escriba
         private string playerName = "Nombre";
+        private Enemy e;
 
         // Cogeremos una referencia al CarSpawner, para pedirle que instancie los coches de los jugadores
         private CarSpawner Spawner;
@@ -34,7 +36,9 @@ namespace Netcode
             {
                 // Si el jugador que se acaba de conectar es la instancia local del juego, 
                 // mediante carSpawner pedimos que el servidor nos instancie nuestro coche
+                
                 Spawner.spanwplayer(clientId, playerName);
+                //e.Buscador();
             }
 
             var localPlayer = NetworkManager.Singleton.SpawnManager.GetLocalPlayerObject();

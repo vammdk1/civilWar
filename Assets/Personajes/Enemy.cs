@@ -36,21 +36,9 @@ namespace personaje
         [SerializeField]
         private int hitPoints;
         private AudioSource audioSource;
-        //Buscar como agregar jugadores a la lista automáticamente
-        private void Awake()
+        private void awake()
         {
-            int i = 0;
-           
-            listaJugadores = GameObject.FindGameObjectsWithTag("Player");
-            foreach(GameObject jugador in listaJugadores){
-                objectToChase[i] = jugador.transform;
-                i++;
-            }
-
-            
             audioSource = GetComponent<AudioSource>();
-
-            
         }
 
         public void Asignador()
@@ -61,50 +49,70 @@ namespace personaje
             transform.rotation = waypoints[currentWaypoint].rotation;
             navMeshAgent.SetDestination(waypoints[currentWaypoint].position);
         }
+        public void Buscador()
+        {
+            listaJugadores = GameObject.FindGameObjectsWithTag("Player");
+        }
 
         private void Update()
         {
-            if (Vector3.Distance(transform.position, objectToChase[0].position) < chaseRadius)
+            if ((objectToChase.Length.Equals(1) && objectToChase[0]==null))
             {
-                currentState = EnemyStates.Chasing;
-                navMeshAgent.speed = defaultSpeed * chasingSpeedFactor;
-            }
-            else
-            {
-                currentState = EnemyStates.Patrolling;
-                navMeshAgent.speed = defaultSpeed;
-            }
 
-            if (currentState == EnemyStates.Patrolling)
-            {
-                
-                if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
+               
+                listaJugadores = GameObject.FindGameObjectsWithTag("Player");
+                int i = 0;
+                foreach (GameObject jugador in listaJugadores)
                 {
-                  /**  currentWaypoint++;
 
-                    if (currentWaypoint >= waypoints.Length)
-                    {
-                        currentWaypoint = 0;
-                    }**/
-                    
-                    navMeshAgent.SetDestination(waypoints[Random.Range(0, waypoints.Length)].position);
+                    objectToChase[i] = jugador.transform;
+                    i++;
                 }
             }
             else
             {
-                if (objectToChase.Length <2 )
+                if (Vector3.Distance(transform.position, objectToChase[0].position) < chaseRadius)
                 {
-                    navMeshAgent.SetDestination(objectToChase[0].position);
+                    currentState = EnemyStates.Chasing;
+                    navMeshAgent.speed = defaultSpeed * chasingSpeedFactor;
                 }
                 else
                 {
-                    if (Vector3.Distance(transform.position, objectToChase[0].position) < Vector3.Distance(transform.position, objectToChase[1].position))
+                    currentState = EnemyStates.Patrolling;
+                    navMeshAgent.speed = defaultSpeed;
+                }
+
+                if (currentState == EnemyStates.Patrolling)
+                {
+
+                    if (navMeshAgent.remainingDistance-2 <= navMeshAgent.stoppingDistance)
+                    {
+                        /**  currentWaypoint++;
+
+                          if (currentWaypoint >= waypoints.Length)
+                          {
+                              currentWaypoint = 0;
+                          }**/
+
+                        navMeshAgent.SetDestination(waypoints[Random.Range(0, waypoints.Length)].position);
+                    }
+                }
+                else
+                {
+                    if (objectToChase.Length < 2)
                     {
                         navMeshAgent.SetDestination(objectToChase[0].position);
                     }
                     else
                     {
-                        navMeshAgent.SetDestination(objectToChase[1].position);
+                        if (Vector3.Distance(transform.position, objectToChase[0].position) < Vector3.Distance(transform.position, objectToChase[1].position))
+                        {
+                            navMeshAgent.SetDestination(objectToChase[0].position);
+                        }
+                        else
+                        {
+                            navMeshAgent.SetDestination(objectToChase[1].position);
+                        }
                     }
                 }
             }
@@ -120,7 +128,7 @@ namespace personaje
            
 
             // ... y si baja a 0, el enemigo muere
-            if (hitPoints <= 0)z
+            if (hitPoints <= 0)
             {
                 Die();
             }

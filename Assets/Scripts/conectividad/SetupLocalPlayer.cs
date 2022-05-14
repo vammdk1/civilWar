@@ -1,3 +1,4 @@
+using personaje;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -13,7 +14,19 @@ namespace Netcode
             { 
                 // ... quitamos la cámara y el control del movimiento
                 Destroy(GetComponentInChildren<Camera>().gameObject);
-                Destroy(GetComponent<MoveBehaviour>());
+                Destroy(GetComponent<Move>());
+                if (GetComponent<Jump>())
+                {
+                    Destroy(GetComponent<Jump>());
+                    Destroy(GetComponent<Bow>());
+                }
+                if (GetComponent<Caballero>())
+                {
+                    Debug.Log("Caballero");
+                    Destroy(GetComponent<Caballero>());
+                    Destroy(GetComponentInChildren<Caballero>());
+                }
+                
             }
         }
 

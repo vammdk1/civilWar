@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Archer
+namespace personaje
 {
 
     public class Move : MonoBehaviour
@@ -31,7 +31,6 @@ namespace Archer
 
         public bool getfreno()
         {
-            Debug.Log("getter:"+freno);
             return freno;
         }
 

@@ -22,7 +22,7 @@ namespace personaje
             for (int i = 0; i < Nenemigos; i++)
             {
                 var en1 = Instantiate(ghost);
-                en1.transform.position = new Vector3(0, 0, 90);
+                en1.transform.position = new Vector3(0, 1, 100);
                 en1.GetComponent<Enemy>().waypoints = waypointsm;
                 en1.AddComponent<NavMeshAgent>();
                 en1.GetComponent<Enemy>().Asignador();

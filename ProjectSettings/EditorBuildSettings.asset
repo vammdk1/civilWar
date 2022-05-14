@@ -8,5 +8,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/pruebas.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 0
+    path: Assets/Scenes/arena.unity
+    guid: 8652ad2b0f5d09c419b40d19af5841e2
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: a4fce27495dfaac4f9e45fff5efa17f6, type: 2}
