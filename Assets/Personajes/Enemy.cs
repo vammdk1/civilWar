@@ -36,13 +36,11 @@ namespace personaje
         [SerializeField]
         private int hitPoints;
         private AudioSource audioSource;
-        private void awake()
-        {
-            audioSource = GetComponent<AudioSource>();
-        }
+       
 
         public void Asignador()
         {
+            audioSource = GetComponent<AudioSource>();
             navMeshAgent = GetComponent<NavMeshAgent>();
             defaultSpeed = navMeshAgent.speed;
             transform.position = waypoints[currentWaypoint].position;
@@ -124,7 +122,7 @@ namespace personaje
         {
             // Bajar la vida
             hitPoints--;
-            audioSource.Play();
+            //audioSource.Play();
            
 
             // ... y si baja a 0, el enemigo muere

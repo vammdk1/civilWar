@@ -28,7 +28,6 @@ namespace personaje
             // Si impacta con el jugador, lo ignoramos
             if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
-                Debug.Log("prueba");
 
                 return;
             }
@@ -45,7 +44,7 @@ namespace personaje
             arrowRigidbody.isKinematic = true;
 
             // Miramos a ver si el objeto contra el que ha impacto la flecha tiene un componente Enemy...
-            var enemy = other.gameObject.GetComponentInParent<Enemy>();
+            var enemy = other.gameObject.GetComponentInParent<Vida>();
             // ... Y si lo tiene, le hacemos daño (la siguiente comprohación es equivalente a hacer if (enemy != null) { enemy.Hit(); }
             enemy?.Hit();
             

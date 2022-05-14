@@ -41,7 +41,7 @@ namespace Netcode
                 //e.Buscador();
             }
 
-            var localPlayer = NetworkManager.Singleton.SpawnManager.GetLocalPlayerObject();
+            //var localPlayer = NetworkManager.Singleton.SpawnManager.GetLocalPlayerObject();
             //var playerDisplay = localPlayer.GetComponent<PlayerDisplay>(); da error
             //playerDisplay.SetPlayerName(playerName);
         }

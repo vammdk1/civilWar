@@ -2,12 +2,13 @@ using Archer;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace personaje
 {
-    public class Caballero : MonoBehaviour
+    public class Caballero : NetworkBehaviour
     {
         [SerializeField]
         private InputActionReference ataque;
@@ -35,10 +36,12 @@ namespace personaje
                 {
                     activarDefensa(false);
                     move.setfreno(false);
+                    GetComponent<Vida>().SetProtegido(false);
                     defensasActivas = !defensasActivas;
                 }
                 else
                 {
+                    GetComponent<Vida>().SetProtegido(true);
                     activarDefensa(true);
                     move.setfreno(true);
                     defensasActivas = !defensasActivas;
@@ -79,7 +82,7 @@ namespace personaje
         private void Impacto()
         {
             // Dibujar un rayo de referencia para saber por dónde se dispara el rayo
-            Debug.DrawRay(transform.position + Vector3.up, transform.forward * 1, Color.red, 1);
+            Debug.DrawRay(transform.position + Vector3.up, transform.forward * 2, Color.red, 1);
 
             // Lanzar un rayo desde la arquera hacia delantes
             RaycastHit raycastHit;
@@ -89,20 +92,16 @@ namespace personaje
             if (hit)
             {
                 // ... comprobar si le ha dado al enemigo
-                if (raycastHit.collider.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+                if (raycastHit.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
                 {
                     // Si choca con el enemigo, obtenemos una referencia al componente Enemy para notificar que ha recibido un hit
                     Debug.Log("Hit enemy");
-                    var enemy = raycastHit.collider.GetComponent<Enemy>();
+                    var enemy = raycastHit.collider.GetComponent<Vida>();
 
                     if (enemy)
                     {
                         enemy.Hit();
                     }
-                }
-                else
-                {
-                    Debug.Log("Miss!");
                 }
             }
         }

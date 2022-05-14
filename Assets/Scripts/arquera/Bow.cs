@@ -1,5 +1,7 @@
+using Netcode;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,9 +15,6 @@ namespace personaje
         private InputActionReference fireInputReference;
 
         [SerializeField]
-        private GameObject arrowPrefab;
-
-        [SerializeField]
         private float force;
         
         [SerializeField]
@@ -23,12 +22,18 @@ namespace personaje
         private Animator shooter;
         private AudioSource audioSource;
         private bool isCooldown;
+        private FlechaSpawner Spawner;
 
         private void Awake()
         {            
             audioSource = GetComponent<AudioSource>();
             shooter = GetComponent<Animator>();
             fireInputReference.action.performed += Action_performed;
+            
+        }
+        private void Start()
+        {
+            Spawner = GetComponent<FlechaSpawner>();
         }
 
         private void Action_performed(InputAction.CallbackContext obj)
@@ -53,11 +58,8 @@ namespace personaje
         private void Shoot()
         {
             audioSource.Play();
-            var newArrow = Instantiate(arrowPrefab);
-            newArrow.transform.position = handPosition.position;
-            newArrow.transform.rotation = transform.rotation;
-            var arrowRigidbody = newArrow.GetComponent<Rigidbody>();
-            arrowRigidbody.AddForce(transform.forward * force);
+            Spawner.spanwFlecha(force, handPosition.position, transform.rotation);
+            
 
         }
     }

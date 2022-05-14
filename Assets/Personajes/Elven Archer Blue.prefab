@@ -1423,6 +1423,8 @@ GameObject:
   - component: {fileID: 7762913837890919069}
   - component: {fileID: 4990281738386395901}
   - component: {fileID: 5936236857275590404}
+  - component: {fileID: 7064889359229452345}
+  - component: {fileID: 4116062745531670071}
   m_Layer: 3
   m_Name: Elven Archer Blue
   m_TagString: Player
@@ -1613,7 +1615,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireInputReference: {fileID: 5197073158939415375, guid: fd9d5ebb29d8f644abc8a12d57b17173, type: 3}
-  arrowPrefab: {fileID: 1256064569770400, guid: 6bd62f57b31c263409fb7d2966b79713, type: 3}
   force: 2000
   handPosition: {fileID: 4796756540657184}
 --- !u!136 &8443296085567350833
@@ -1713,6 +1714,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNameLabel: {fileID: 9010473186737299611}
+--- !u!114 &7064889359229452345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798490320975608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb9080d42ef51e94dbb9b3156232ed6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flechas: {fileID: 1256064569770400, guid: 6bd62f57b31c263409fb7d2966b79713, type: 3}
+--- !u!114 &4116062745531670071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798490320975608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1c6ccf61b814da4fbae2d45c05cbbf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitPoints: 2
 --- !u!1 &1801285664744404
 GameObject:
   m_ObjectHideFlags: 0

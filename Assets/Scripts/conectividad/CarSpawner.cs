@@ -13,7 +13,9 @@ namespace Netcode
         private GameObject Arquera;
 
 
-       
+
+
+
 
         internal void spanwplayer(ulong clientId, string playerName)
         {
@@ -47,6 +49,9 @@ namespace Netcode
             var playerDisplay = carGameObject.GetComponent<PlayerDisplay>();
             playerDisplay.SetPlayerName(playerName);
         }
+
+
+
     }
 
 }
