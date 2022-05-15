@@ -453,9 +453,13 @@ PrefabInstance:
       value: 3723310130
       objectReference: {fileID: 0}
     - target: {fileID: 75468753340866514, guid: 8617d6d657b8b684fa07c643c8d7566b, type: 3}
-      propertyPath: Caballero
+      propertyPath: Arquera
       value: 
       objectReference: {fileID: 100064, guid: e49337761d3915044979621bd32ebf79, type: 3}
+    - target: {fileID: 75468753340866514, guid: 8617d6d657b8b684fa07c643c8d7566b, type: 3}
+      propertyPath: Caballero
+      value: 
+      objectReference: {fileID: 1798490320975608, guid: 392d9512b2513d642804ffd2cd79c275, type: 3}
     - target: {fileID: 75468753340866515, guid: 8617d6d657b8b684fa07c643c8d7566b, type: 3}
       propertyPath: m_RootOrder
       value: 4

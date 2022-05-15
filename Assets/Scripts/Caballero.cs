@@ -13,8 +13,7 @@ namespace personaje
         [SerializeField]
         private InputActionReference ataque;
 
-        [SerializeField]
-        private InputActionReference defensa;
+     
 
         private Animator control;
         private Move move;

@@ -1187,6 +1187,7 @@ GameObject:
   - component: {fileID: 2599247449554621481}
   - component: {fileID: 988857559940357524}
   - component: {fileID: 3879741007849125591}
+  - component: {fileID: 7510549386620818132}
   m_Layer: 9
   m_Name: MedievalKnight-Blue
   m_TagString: Player
@@ -1374,7 +1375,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ataque: {fileID: 5197073158939415375, guid: fd9d5ebb29d8f644abc8a12d57b17173, type: 3}
-  defensa: {fileID: -7012305234762511151, guid: fd9d5ebb29d8f644abc8a12d57b17173, type: 3}
 --- !u!114 &2599247449554621481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1497,6 +1497,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 9500000}
+--- !u!114 &7510549386620818132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a19fdaa5ed83464180b2f2457731733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 300
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  jumpActionReference: {fileID: -7691203855604214832, guid: fd9d5ebb29d8f644abc8a12d57b17173, type: 3}
 --- !u!1 &897407269929040029
 GameObject:
   m_ObjectHideFlags: 0
