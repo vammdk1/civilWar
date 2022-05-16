@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -27,7 +28,7 @@ namespace personaje
         private float chasingSpeedFactor = 1.5f;
 
         //[SerializeField]
-        public Transform[] waypoints;
+        public List<Transform> waypoints;
 
         private int currentWaypoint;
 
@@ -36,13 +37,18 @@ namespace personaje
         [SerializeField]
         private int hitPoints;
         private AudioSource audioSource;
-       
+        private void Awake()
+        {
+            navMeshAgent = gameObject.AddComponent(typeof(NavMeshAgent)) as NavMeshAgent;
+        }
 
-        public void Asignador()
+
+        public void Asignador(List<Transform> x )
         {
             audioSource = GetComponent<AudioSource>();
             navMeshAgent = GetComponent<NavMeshAgent>();
-            defaultSpeed = navMeshAgent.speed;
+            defaultSpeed = 3.5f;
+            waypoints = x;
             transform.position = waypoints[currentWaypoint].position;
             transform.rotation = waypoints[currentWaypoint].rotation;
             navMeshAgent.SetDestination(waypoints[currentWaypoint].position);
@@ -54,25 +60,12 @@ namespace personaje
 
         private void Update()
         {
-            if ((objectToChase.Length.Equals(1) && objectToChase[0]==null))
-            {
-
-               
-                listaJugadores = GameObject.FindGameObjectsWithTag("Player");
-                int i = 0;
-                foreach (GameObject jugador in listaJugadores)
-                {
-
-                    objectToChase[i] = jugador.transform;
-                    i++;
-                }
-            }
-            else
-            {
+          
                 if (Vector3.Distance(transform.position, objectToChase[0].position) < chaseRadius)
                 {
                     currentState = EnemyStates.Chasing;
                     navMeshAgent.speed = defaultSpeed * chasingSpeedFactor;
+                   
                 }
                 else
                 {
@@ -92,7 +85,7 @@ namespace personaje
                               currentWaypoint = 0;
                           }**/
 
-                        navMeshAgent.SetDestination(waypoints[Random.Range(0, waypoints.Length)].position);
+                        navMeshAgent.SetDestination(waypoints[Random.Range(0, waypoints.Count)].position);
                     }
                 }
                 else
@@ -114,7 +107,7 @@ namespace personaje
                     }
                 }
             }
-        }
+        
 
 
         // Método que se llamará cuando el enemigo reciba un impacto

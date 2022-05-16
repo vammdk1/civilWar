@@ -7,6 +7,8 @@ namespace Netcode
 
     public class NetLogic : NetworkBehaviour
     {
+        [SerializeField]
+        GameObject Espawn;
 
         // Desde este script controlaremos la comunicación de red.
 
@@ -54,7 +56,8 @@ namespace Netcode
             // Dibujar un campo de texto para que los usuarios introduzcan su nombre
             playerName = GUILayout.TextField(playerName);
 
-            // Dibujar botones que servirán para alojar una partida como Host (server y player a la vez)
+            // Dibujar botones que servirán para alojar una partida como
+            // (server y player a la vez)
             // o bien como Client (solo jugador)
             if (GUILayout.Button("Cliente"))
             {
@@ -63,6 +66,8 @@ namespace Netcode
             if (GUILayout.Button("Host"))
             {
                 NetworkManager.Singleton.StartHost();
+                var enemigos = Instantiate(Espawn);
+                enemigos.transform.position = new Vector3(0, 1, 100);
             }
         }
 

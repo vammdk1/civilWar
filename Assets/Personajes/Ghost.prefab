@@ -474,7 +474,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToChase:
-  - {fileID: 0}
+  - {fileID: 4033575738913862, guid: 392d9512b2513d642804ffd2cd79c275, type: 3}
+  - {fileID: 400064, guid: e49337761d3915044979621bd32ebf79, type: 3}
   chaseRadius: 10
   chasingSpeedFactor: 1.5
   waypoints: []

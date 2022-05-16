@@ -13,8 +13,15 @@ namespace personaje
         // Una referencia al prefab de la flecha
         [SerializeField]
         private GameObject ghost;
+
         [SerializeField]
-        private Transform[] waypointsm;
+        private int Npuntos;
+
+        [SerializeField]
+        private  List<Transform> waypoints = new List<Transform>();
+
+        [SerializeField]
+        private int Nenemy;
         /**
         internal void spanwEnemigo(int Ne)
         {
@@ -30,20 +37,21 @@ namespace personaje
         }**/
 
         //[ServerRpc(RequireOwnership = false)]
-        private void awake()
+        private void Awake()
         {
+            Debug.Log("fantasma-----------------------------------------");
             GameObject fantamas;
-            Debug.Log("SpawnEnemigosServerRpc");
-            for (int i = 0; i < 3; i++)
+            fantamas = Instantiate(ghost);
+        
+            for (int i = 0; i < Nenemy; i++)
             {
                 fantamas = Instantiate(ghost);
+                fantamas.transform.position = new Vector3(0, 1, 100);
+                fantamas.GetComponent<Enemy>().Asignador(waypoints);
                 var networObject = fantamas.GetComponent<NetworkObject>();
                 networObject.Spawn();
-
-                fantamas.transform.position = new Vector3(0, 1, 100);
-                fantamas.GetComponent<Enemy>().waypoints = waypointsm;
-                fantamas.AddComponent<NavMeshAgent>();
-                fantamas.GetComponent<Enemy>().Asignador();
+              
+                
 
             }
            

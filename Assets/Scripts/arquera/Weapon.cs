@@ -1,4 +1,5 @@
-using Archer;
+
+using personaje;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -43,7 +44,7 @@ namespace personajes
                 {
                     // Si choca con el enemigo, obtenemos una referencia al componente Enemy para notificar que ha recibido un hit
                     Debug.Log("Hit enemy");
-                    var enemy = raycastHit.collider.GetComponent<Enemy>();
+                    var enemy = raycastHit.collider.GetComponent<Vida>();
 
                     if (enemy)
                     {
